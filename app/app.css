@@ -1,0 +1,183 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --azul-oscuro : hsl(238, 29%, 16%);
+    --naranja : hsl(14, 88%, 65%);
+    --plomo : hsl(237, 12%, 33%);
+    --gris : hsl(240, 6%, 50%);
+    --blanco : hsl(240, 5%, 91%);
+}
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Kumbh Sans', sans-serif;
+    background: linear-gradient(180deg, rgba(175,103,233,1) 23%, rgba(101,101,231,1) 58%);
+}
+
+ .contenedor{
+    width: 900px;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 50px;
+    padding: 60px;
+    padding-left: 0px;
+    border-radius: 10px;
+    position: relative;
+    background: #fff;
+    box-shadow: 0px 0px 6px #0002;
+}
+
+.contenedor-img{
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.box{
+    position: fixed;
+    z-index: 100;
+    left: 150px;
+    bottom: 190px;
+}
+
+.ilustacion{
+    position: relative;
+    left: -40px;
+    width: 400px;
+}
+.fondo{
+    position: absolute;
+    width: 650px;
+    top: -150px;
+    left: -300px;
+    display: none;
+
+}
+
+.contenedor-texto{
+    max-height: 350px;
+    overflow: auto;
+
+}
+.contenedor-texto .titulo-principal{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* pregunta */
+
+.contenedor-preguntas{
+    width: 350px;
+}
+.texto .titulo{
+    margin: 10px 0;
+    font-size: 13px;
+    color: var(--azul-oscuro);
+    letter-spacing: .7px;
+}
+.pregunta .texto{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pregunta .parrafo{
+    font-size: 12px;
+    padding-right: 20px;
+    line-height: 20px;
+    color: var(--gris);
+    display: none;
+}
+.pregunta{
+    border-bottom: 1px solid var(--plomo);
+    padding: 10px 0;
+}
+
+
+.contenedor-pregunta{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    display: none;
+}
+.fa-angle-up::before{
+    display: none;
+}
+
+/* respuesta */
+
+.respuesta{
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 20px;
+    display: none;
+    padding-right: 15px;
+
+}
+.active .pregunta{
+    font-weight: 700
+}
+
+.btn{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.icon{
+    position:relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: -1;
+    color: var(--naranja);
+    font-size: 15px;
+}
+
+/* js */
+
+
+
+
+@keyframes desplegar {
+
+
+    0%{
+        height: 0px;
+    }
+    100%{
+        height: 50px;
+    }
+
+
+    
+}
+
+
+.active .parrafo {
+    display: block;
+    animation-name: desplegar;
+    animation-duration: 1.3s;
+}
+.active .texto .titulo{
+    font-weight: 700;
+}
+.active .fa-angle-down::before{
+    display: none;
+}
+.active .fa-angle-up::before{
+    display: block;
+}
